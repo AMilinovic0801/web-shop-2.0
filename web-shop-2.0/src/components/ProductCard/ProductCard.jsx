@@ -9,37 +9,28 @@ const ProductCard = ({ title, productItem }) => {
   const dispatch = useDispatch();
   const router = useNavigate();
   const handelClick = () => {
-    router(`/shop/${productItem.id}`);
+    router(`/shop/${productItem.partsId}`);
   };
   const handelAdd = (productItem) => {
+    console.log("thing to add to cart", productItem);
     dispatch(addToCart({ product: productItem, num: 1 }));
     toast.success("Product has been added to cart!");
   };
   return (
     <Col md={3} sm={5} xs={10} className="product mtop">
-      {title === "Big Discount" ? (
-        <span className="discount">{productItem.discount}% Off</span>
-      ) : null}
       <img
         loading="lazy"
         onClick={() => handelClick()}
-        src={productItem.imgUrl}
+        src={productItem.partThumbnail}
         alt=""
       />
       <div className="product-like">
         <ion-icon name="heart-outline"></ion-icon>
       </div>
       <div className="product-details">
-        <h3 onClick={() => handelClick()}>{productItem.productName}</h3>
-        <div className="rate">
-          <i className="fa fa-star"></i>
-          <i className="fa fa-star"></i>
-          <i className="fa fa-star"></i>
-          <i className="fa fa-star"></i>
-          <i className="fa fa-star"></i>
-        </div>
+        <h3 onClick={() => handelClick()}>{title}</h3>
         <div className="price">
-          <h4>${productItem.price}</h4>
+          <h4>${productItem.partPrice}</h4>
           <button
             aria-label="Add"
             type="submit"

@@ -2,6 +2,7 @@ import { Container, Row } from "react-bootstrap";
 import ProductCard from "./ProductCard/ProductCard";
 
 const Section = ({ title, bgColor, productItems }) => {
+  console.log("DATA COMMING IN", productItems);
   return (
     <section style={{ background: bgColor }}>
       <Container>
@@ -9,12 +10,12 @@ const Section = ({ title, bgColor, productItems }) => {
           <h1>{title}</h1>
         </div>
         <Row className="justify-content-center">
-          {productItems.map((productItem) => {
+          {productItems.slice(5, 11).map((part) => {
             return (
               <ProductCard
-                key={productItem.id}
-                title={title}
-                productItem={productItem}
+                key={part.partsId}
+                title={part.partName}
+                productItem={part}
               />
             );
           })}

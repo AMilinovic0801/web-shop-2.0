@@ -1,6 +1,6 @@
 .wrapper {
   text-align: center;
-  background-color: white;
+  background-image: url("https://res.cloudinary.com/dygasiqvo/image/upload/v1710268583/empy_road_pwfoyy.webp");
 }
 
 .icon {
@@ -17,11 +17,6 @@
 
 .wrapper .row {
   justify-content: center;
-}
-
-.wrapper .feature {
-  padding: 10px;
-  border: 4px solid white;
 }
 
 .wrapper .feature h3 {

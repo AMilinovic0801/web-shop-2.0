@@ -14,14 +14,15 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
+      console.log("CARTSLICE", action.payload.product.partsId);
       const productToAdd = action.payload.product;
       const quantity = action.payload.num;
       const productExit = state.cartList.find(
-        (item) => item.id === productToAdd.id
+        (item) => item.id === productToAdd.partsId
       );
       if (productExit) {
         state.cartList = state.cartList.map((item) =>
-          item.id === action.payload.product.id
+          item.id === action.payload.product.partsId
             ? { ...productExit, qty: productExit.qty + action.payload.num }
             : item
         );

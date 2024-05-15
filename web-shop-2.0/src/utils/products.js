@@ -18,7 +18,6 @@ import phone03 from "../Images/phone-03.png";
 import phone04 from "../Images/phone-04.jpg";
 import phone05 from "../Images/phone-05.jpg";
 import phone06 from "../Images/phone-06.jpg";
-import phone08 from "../Images/phone-08.png";
 
 import watch01 from "../Images/watch-01.jpg";
 import watch02 from "../Images/watch-02.jpg";
@@ -30,60 +29,34 @@ import wireless02 from "../Images/wireless-02.png";
 import wireless03 from "../Images/wireless-03.png";
 import wireless04 from "../Images/wireless-04.png";
 
-import sofaSlide from "../Images/hero-img.png";
-import watchSlide from "../Images/watch-07.png";
-
-export const SliderData = [
-  {
-      id: 1,
-      title: "50% Off For Your First Shopping",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: sofaSlide,
-  },
-  {
-      id: 2,
-      title: "50% Off For Your First Shopping",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: phone08,
-  },
-  {
-      id: 3,
-      title: "50% Off For Your First Shopping",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: wireless01,
-  },
-  {
-      id: 4,
-      title: "50% Off For Your First Shopping",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-      cover: watchSlide,
-  },
-];
-
 export const serviceData = [
   {
-    icon: <ion-icon name="car"></ion-icon>,
-    title: "Free Shipping",
-    subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#fdefe6",
+    icon: <ion-icon name="hourglass"></ion-icon>,
+    title: "More than 30 years experience",
+    subtitle:
+      "JPN auto import has been around since 1994. With our professional team you can purchase a classic car or the part you have been waiting for!",
+    bg: "#F0544F",
   },
   {
-    icon: <ion-icon name="card"></ion-icon>,
-    title: "Safe Payment",
-    subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#ceebe9",
+    icon: <ion-icon name="car-sport"></ion-icon>,
+    title: "Check out our original Japan parts and cars",
+    subtitle:
+      "Explore our store's exclusive collection of authentic Japanese parts and cars, meticulously sourced to enhance your vehicle's performance and aesthetics. Immerse yourself in the world of automotive excellence with our curated selection of original Japan parts.",
+    bg: "#FFFCF9",
   },
   {
-    icon: <ion-icon name="shield-half-outline"></ion-icon>,
-    title: "Secure Payment",
-    subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#e2f2b2",
+    icon: <ion-icon name="newspaper"></ion-icon>,
+    title: "Read our blog about the lates in the JDM world",
+    subtitle:
+      "Discover the latest trends and innovations in the JDM realm through our engaging blog, offering insights and updates on the vibrant automotive culture. Stay informed and inspired as we delve into the dynamic world of Japanese Domestic Market enthusiasts.",
+    bg: "#2589BD",
   },
   {
-    icon: <ion-icon name="headset"></ion-icon>,
-    title: " Back Guarantee",
-    subtitle: "Lorem ipsum dolor sit amet.",
-    bg: "#d6e5fb",
+    icon: <ion-icon name="wallet"></ion-icon>,
+    title: "Buy back guarantee",
+    subtitle:
+      "LRest assured with our buyback guarantee, ensuring customers receive parts or cars precisely as described. In the rare event of any discrepancy, we commit to repurchasing the item, prioritizing customer satisfaction above all else.",
+    bg: "#FFC100",
   },
 ];
 
@@ -94,7 +67,7 @@ export const discoutProducts = [
     imgUrl: productImg01,
     category: "sofa",
     price: 193,
-    discount:30,
+    discount: 30,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -113,7 +86,7 @@ export const discoutProducts = [
     imgUrl: productImg02,
     category: "sofa",
     price: 253,
-    discount:20,
+    discount: 20,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -136,7 +109,7 @@ export const discoutProducts = [
     imgUrl: productImg08,
     category: "chair",
     price: 89,
-    discount:15,
+    discount: 15,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -159,7 +132,7 @@ export const discoutProducts = [
     imgUrl: productImg09,
     category: "chair",
     price: 112,
-    discount:35,
+    discount: 35,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -182,7 +155,7 @@ export const discoutProducts = [
     imgUrl: phone03,
     category: "mobile",
     price: 599,
-    discount:10,
+    discount: 10,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -205,7 +178,7 @@ export const discoutProducts = [
     imgUrl: phone04,
     category: "mobile",
     price: 799,
-    discount:5,
+    discount: 5,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -222,8 +195,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.8,
   },
-
-]
+];
 
 export const products = [
   {
@@ -812,5 +784,4 @@ export const products = [
     ],
     avgRating: 4.8,
   },
-
 ];
