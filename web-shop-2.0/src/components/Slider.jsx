@@ -6,18 +6,13 @@ import SlideCard from "./SliderCard/SlideCard";
 import { SliderData } from "../utils/products";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../app/features/dataSlice";
 
 const SliderHome = () => {
-  const dispatch = useDispatch();
-  const { loading, data, error } = useSelector((state) => state.data);
-
-  useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  const {
+    loading: partsLoading,
+    data: partsData,
+    error: partsError,
+  } = useSelector((state) => state.partsData);
 
   const settings = {
     nav: false,
@@ -30,7 +25,7 @@ const SliderHome = () => {
     <section className="homeSlide">
       <Container>
         <Slider {...settings}>
-          {data.slice(0, 3).map((parts) => {
+          {partsData.slice(0, 3).map((parts) => {
             return (
               <SlideCard
                 key={parts.partsId}

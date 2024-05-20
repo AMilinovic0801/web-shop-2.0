@@ -4,37 +4,63 @@ import Section from "../components/Section";
 import { products, discoutProducts } from "../utils/products";
 import SliderHome from "../components/Slider";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../app/features/dataSlice";
-import Loader from "../components/Loader/Loader";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const newArrivalData = ["1", "2", "3", "4", "5", "6"];
-  const bestSales = ["1", "2", "3", "4", "5", "6"];
-
-  const dispatch = useDispatch();
-  const { loading, data, error } = useSelector((state) => state.data);
-
-  useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
-
-  const partsData = data;
-
   useWindowScrollToTop();
+
+  const {
+    loading: partsLoading,
+    data: partsData,
+    error: partsError,
+  } = useSelector((state) => state.partsData);
+  const {
+    loading: carsLoading,
+    data: carData,
+    error: carsError,
+  } = useSelector((state) => state.carData);
+
+  if (partsLoading || carsLoading) return "Loading ...";
+  if (partsError || carsError) return <p>Error: {partsError || carsError}</p>;
+
+  const formattedPartsData = partsData.map((part) => ({
+    id: part.partsId,
+    name: part.partName,
+    thumbnail: part.partThumbnail,
+    price: part.partPrice,
+    description: part.partDescription,
+  }));
+
+  const formattedCarData = carData.map((car) => ({
+    id: car.id,
+    name: car.title,
+    thumbnail: car.thumbnailCarPicture,
+    description: car.title,
+  }));
+
+  const carBoxStyle = {
+    price: {
+      display: "none", // This hides the price
+    },
+    button: {
+      display: "none", // This hides the button
+    },
+  };
 
   return (
     <Fragment>
       <SliderHome />
       <Wrapper />
-      <Section title="Fresh parts from Japan" productItems={partsData} />
       <Section
-        title="New Arrivals"
-        bgColor="white"
-        productItems={newArrivalData}
+        title="Fresh parts from Japan"
+        productItems={formattedPartsData}
       />
-      <Section title="Best Sales" bgColor="#f6f9fc" productItems={bestSales} />
+      <Section
+        title="Import cars"
+        bgColor="white"
+        productItems={formattedCarData}
+        style={carBoxStyle}
+      />
     </Fragment>
   );
 };

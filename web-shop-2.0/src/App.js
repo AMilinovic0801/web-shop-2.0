@@ -6,15 +6,23 @@ import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import TestMyFetch from "./components/TestMyFetch";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPartsData } from "./app/features/partsData";
+import { fetchCarData } from "./app/features/carData";
 const Home = lazy(() => import("./pages/Home"));
 const Shop = lazy(() => import("./pages/Shop"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Product = lazy(() => import("./pages/Product"));
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchPartsData());
+    dispatch(fetchCarData());
+  }, [dispatch]);
   return (
     <Suspense fallback={<Loader />}>
-      <TestMyFetch></TestMyFetch>
       <Router>
         <ToastContainer
           position="top-right"

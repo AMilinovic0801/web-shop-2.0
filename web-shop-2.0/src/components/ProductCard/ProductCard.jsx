@@ -9,7 +9,7 @@ const ProductCard = ({ title, productItem }) => {
   const dispatch = useDispatch();
   const router = useNavigate();
   const handelClick = () => {
-    router(`/shop/${productItem.partsId}`);
+    router(`/shop/${productItem.id}`);
   };
   const handelAdd = (productItem) => {
     console.log("thing to add to cart", productItem);
@@ -21,16 +21,16 @@ const ProductCard = ({ title, productItem }) => {
       <img
         loading="lazy"
         onClick={() => handelClick()}
-        src={productItem.partThumbnail}
+        src={productItem.thumbnail}
         alt=""
       />
       <div className="product-like">
         <ion-icon name="heart-outline"></ion-icon>
       </div>
       <div className="product-details">
-        <h3 onClick={() => handelClick()}>{title}</h3>
+        <h3 onClick={() => handelClick()}>{productItem.description}</h3>
         <div className="price">
-          <h4>${productItem.partPrice}</h4>
+          <h4>${productItem.price}</h4>
           <button
             aria-label="Add"
             type="submit"
