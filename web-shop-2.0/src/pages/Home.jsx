@@ -38,15 +38,6 @@ const Home = () => {
     description: car.title,
   }));
 
-  const carBoxStyle = {
-    price: {
-      display: "none", // This hides the price
-    },
-    button: {
-      display: "none", // This hides the button
-    },
-  };
-
   return (
     <Fragment>
       <SliderHome />
@@ -59,7 +50,6 @@ const Home = () => {
         title="Import cars"
         bgColor="white"
         productItems={formattedCarData}
-        style={carBoxStyle}
       />
     </Fragment>
   );

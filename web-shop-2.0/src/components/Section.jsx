@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import ProductCard from "./ProductCard/ProductCard";
 
-const Section = ({ title, bgColor, productItems, style }) => {
+const Section = ({ title, bgColor, productItems }) => {
   console.log("DATA COMMING IN", productItems);
   return (
     <section style={{ background: bgColor }}>
@@ -17,7 +17,6 @@ const Section = ({ title, bgColor, productItems, style }) => {
                 key={product.id}
                 title={product.name}
                 productItem={product}
-                style={style}
               />
             );
           })}

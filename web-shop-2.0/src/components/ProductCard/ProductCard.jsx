@@ -29,13 +29,19 @@ const ProductCard = ({ title, productItem }) => {
       </div>
       <div className="product-details">
         <h3 onClick={() => handelClick()}>{productItem.description}</h3>
-        <div className="price">
+        <div
+          className="price"
+          style={!productItem.price ? { display: "none" } : { display: "true" }}
+        >
           <h4>${productItem.price}</h4>
           <button
             aria-label="Add"
             type="submit"
             className="add"
             onClick={() => handelAdd(productItem)}
+            style={
+              !productItem.price ? { display: "none" } : { display: "true" }
+            }
           >
             <ion-icon name="add"></ion-icon>
           </button>
